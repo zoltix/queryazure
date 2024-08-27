@@ -1,0 +1,18 @@
+{
+	"name": "ds_ListOfBABSDataFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BABSData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "data/babs",
+				"container": "u2ulabs"
+			}
+		}
+	}
+}
