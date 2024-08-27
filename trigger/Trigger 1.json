@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "test",
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
@@ -15,7 +15,7 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Minute",
+				"frequency": "Day",
 				"interval": 15,
 				"startTime": "2024-08-27T10:53:00",
 				"timeZone": "Romance Standard Time"
