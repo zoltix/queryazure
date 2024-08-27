@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "lli-synapseworksapce"
+		},
+		"lli-synapseworksapce-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:lli-synapseworksapce.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ls_BABSData_connectionString": {
+			"value": ""
+		},
+		"lli-synapseworksapce-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://lliu2usynapseworkspace.dfs.core.windows.net"
+		}
+	}
+}
