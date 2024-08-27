@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_0pd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lli-synapseworksapce-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "RAW/BABS/Station",
+				"fileSystem": "datalake"
+			},
+			"compressionCodec": "snappy",
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\"",
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
