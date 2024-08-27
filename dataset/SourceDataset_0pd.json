@@ -1,0 +1,52 @@
+{
+	"name": "SourceDataset_0pd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BABSData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "201508_station_data.csv",
+				"container": "u2ulabs"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "station_id",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "lat",
+				"type": "String"
+			},
+			{
+				"name": "long",
+				"type": "String"
+			},
+			{
+				"name": "dockcount",
+				"type": "String"
+			},
+			{
+				"name": "landmark",
+				"type": "String"
+			},
+			{
+				"name": "installation",
+				"type": "String"
+			}
+		]
+	}
+}
