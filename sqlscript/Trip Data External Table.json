@@ -1,0 +1,17 @@
+{
+	"name": "Trip Data External Table",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] \n\tWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\n\t       FORMAT_OPTIONS (\n\t\t\t FIELD_TERMINATOR = ',',\n\t\t\t FIRST_ROW = 2,\n\t\t\t USE_TYPE_DEFAULT = FALSE\n\t\t\t))\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'datalake_lliu2usynapseworkspace_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [datalake_lliu2usynapseworkspace_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://datalake@lliu2usynapseworkspace.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.trip_data (\n\t[Trip ID] bigint,\n\t[Duration] bigint,\n\t[Start Date] nvarchar(4000),\n\t[Start Station] nvarchar(4000),\n\t[Start Terminal] bigint,\n\t[End Date] nvarchar(4000),\n\t[End Station] nvarchar(4000),\n\t[End Terminal] bigint,\n\t[Bike #] bigint,\n\t[Subscriber Type] nvarchar(4000),\n\t[Zip Code] bigint\n\t)\n\tWITH (\n\tLOCATION = 'RAW/BABS/SmallFiles/201508_trip_data.csv',\n\tDATA_SOURCE = [datalake_lliu2usynapseworkspace_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseDelimitedTextFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.trip_data\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "babs",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
