@@ -452,7 +452,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "35d4e9d6-34b8-45bf-974e-a9d63964ecdf"
+						"spark.autotune.trackingId": "db8ad8e6-af38-420b-850d-29a04cd4562c"
 					}
 				},
 				"metadata": {
@@ -508,6 +508,64 @@
 						],
 						"outputs": [],
 						"execution_count": 2
+					},
+					{
+						"cell_type": "markdown",
+						"metadata": {
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"# my reeal test "
+						]
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"from pyspark.sql import SparkSession \n",
+							"from pyspark.sql.types import * \n",
+							"        \n",
+							"# Azure storage access info \n",
+							"blob_account_name = 'u2ubabssourcedatalli ' # replace with your blob name \n",
+							"blob_container_name = 'u2ulabs' # replace with your container name \n",
+							"blob_relative_path = 'data/babs/' # replace with your relative folder path \n",
+							"linked_service_name = 'Your linked service name' # replace with your linked service name \n",
+							"        \n",
+							"blob_sas_token = mssparkutils.credentials.getConnectionStringOrCreds(linked_service_name) \n",
+							"        \n",
+							"# Allow SPARK to access from Blob remotely \n",
+							"wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path) \n",
+							"spark.conf.set('fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name), blob_sas_token) \n",
+							"print('Remote blob path: ' + wasbs_path) \n",
+							"        \n",
+							"# Read a csv file \n",
+							"csv_path = wasbs_path + 'Your file name ' \n",
+							"df_csv = spark.read.csv(csv_path, header = 'true') \n",
+							"        \n",
+							"# Read a parquet file \n",
+							"parquet_path = wasbs_path + ' Your file name ' \n",
+							"df_parquet = spark.read.parquet(parquet_path) \n",
+							"        \n",
+							"# Read a json file \n",
+							"json_path = wasbs_path + 'Your file name ' \n",
+							"df_json = spark.read.json(json_path) "
+						],
+						"outputs": [],
+						"execution_count": null
 					}
 				]
 			},
