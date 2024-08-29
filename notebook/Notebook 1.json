@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "54d4f5c6-8783-4836-a959-dcc86b446784"
+				"spark.autotune.trackingId": "6cb2e165-2dbb-4f55-b187-206e430abe6d"
 			}
 		},
 		"metadata": {
@@ -70,7 +70,7 @@
 				"source": [
 					"1+2"
 				],
-				"execution_count": 4
+				"execution_count": 25
 			},
 			{
 				"cell_type": "markdown",
@@ -108,7 +108,7 @@
 					"blob_relative_path = 'data/babs/' # replace with your relative folder path \n",
 					"linked_service_name = 'ls_BABSData'"
 				],
-				"execution_count": null
+				"execution_count": 26
 			},
 			{
 				"cell_type": "code",
@@ -134,18 +134,18 @@
 					"print('Remote blob path: ' + wasbs_path) \n",
 					"        \n",
 					"# Read a csv file \n",
-					"csv_path = wasbs_path + 'Your file name ' \n",
+					"csv_path = wasbs_path + '201508_trip_data.csv' \n",
 					"df_csv = spark.read.csv(csv_path, header = 'true') \n",
 					"        \n",
 					"# Read a parquet file \n",
-					"parquet_path = wasbs_path + ' Your file name ' \n",
+					"parquet_path = wasbs_path + '201508_trip_data.csv' \n",
 					"df_parquet = spark.read.parquet(parquet_path) \n",
 					"        \n",
 					"# Read a json file \n",
-					"json_path = wasbs_path + 'Your file name ' \n",
+					"json_path = wasbs_path + '201508_trip_data.csv' \n",
 					"df_json = spark.read.json(json_path) "
 				],
-				"execution_count": 8
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -164,7 +164,7 @@
 					"%%sql \n",
 					"create database u2udemo"
 				],
-				"execution_count": 9
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
