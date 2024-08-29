@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "013244c4-b9eb-4da6-852b-b706c00271c0"
+				"spark.autotune.trackingId": "0adb0c26-5e08-4c60-8a52-2dc6cad325cf"
 			}
 		},
 		"metadata": {
@@ -58,7 +58,11 @@
 					}
 				},
 				"source": [
-					"# hello wold"
+					"# hello wold\n",
+					"\n",
+					"$$\\sum_{i=1}^{10} i^2$$\n",
+					"\n",
+					""
 				]
 			},
 			{
@@ -66,7 +70,7 @@
 				"source": [
 					"1+2"
 				],
-				"execution_count": null
+				"execution_count": 2
 			}
 		]
 	}
