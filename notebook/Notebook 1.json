@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "78e2c62b-a0c8-48db-ad05-87cfaf3b25d1"
+				"spark.autotune.trackingId": "3a2645b3-7301-4159-ace0-dfba91fb92e8"
 			}
 		},
 		"metadata": {
@@ -106,7 +106,7 @@
 					"blob_account_name = 'u2ubabssourcedatalli ' # replace with your blob name \n",
 					"blob_container_name = 'u2ulabs' # replace with your container name \n",
 					"blob_relative_path = 'data/babs/' # replace with your relative folder path \n",
-					"linked_service_name = 'Your linked service name' # replace with your linked service name \n",
+					"linked_service_name = 'ls_BABSData' # replace with your linked service name \n",
 					"        \n",
 					"blob_sas_token = mssparkutils.credentials.getConnectionStringOrCreds(linked_service_name) \n",
 					"        \n",
