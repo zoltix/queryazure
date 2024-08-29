@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "66cccc32-af48-482e-b946-fd19ef33783b"
+				"spark.autotune.trackingId": "54d4f5c6-8783-4836-a959-dcc86b446784"
 			}
 		},
 		"metadata": {
@@ -70,7 +70,7 @@
 				"source": [
 					"1+2"
 				],
-				"execution_count": 2
+				"execution_count": 4
 			},
 			{
 				"cell_type": "markdown",
@@ -103,10 +103,10 @@
 					"from pyspark.sql.types import * \n",
 					"        \n",
 					"# Azure storage access info \n",
-					"blob_account_name = 'u2ubabssourcedatalli ' # replace with your blob name \n",
+					"blob_account_name = 'u2ubabssourcedatalli' # replace with your blob name \n",
 					"blob_container_name = 'u2ulabs' # replace with your container name \n",
 					"blob_relative_path = 'data/babs/' # replace with your relative folder path \n",
-					"linked_service_name = 'ls_BABSData"
+					"linked_service_name = 'ls_BABSData'"
 				],
 				"execution_count": null
 			},
@@ -124,7 +124,7 @@
 					}
 				},
 				"source": [
-					"' # replace with your linked service name \n",
+					"# replace with your linked service name \n",
 					"        \n",
 					"blob_sas_token = mssparkutils.credentials.getConnectionStringOrCreds(linked_service_name) \n",
 					"        \n",
@@ -145,7 +145,7 @@
 					"json_path = wasbs_path + 'Your file name ' \n",
 					"df_json = spark.read.json(json_path) "
 				],
-				"execution_count": null
+				"execution_count": 8
 			},
 			{
 				"cell_type": "code",
@@ -164,7 +164,7 @@
 					"%%sql \n",
 					"create database u2udemo"
 				],
-				"execution_count": null
+				"execution_count": 9
 			},
 			{
 				"cell_type": "code",
