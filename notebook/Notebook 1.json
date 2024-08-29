@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "08d1f323-6109-4310-9dc3-cc107c4cb815"
+				"spark.autotune.trackingId": "04c5fc22-db60-4fc4-bbaa-ba4256756921"
 			}
 		},
 		"metadata": {
@@ -144,6 +144,25 @@
 					"# Read a json file \n",
 					"json_path = wasbs_path + 'Your file name ' \n",
 					"df_json = spark.read.json(json_path) "
+				],
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"%%sql \n",
+					"create database u2udemo"
 				],
 				"execution_count": null
 			},
