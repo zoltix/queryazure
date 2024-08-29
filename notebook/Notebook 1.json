@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "1653c89f-d4b5-4045-bcf4-45d934213b6d"
+				"spark.autotune.trackingId": "011a5333-cafb-4582-9c68-7c433ebb0e08"
 			}
 		},
 		"metadata": {
@@ -70,7 +70,7 @@
 				"source": [
 					"1+2"
 				],
-				"execution_count": 27
+				"execution_count": 44
 			},
 			{
 				"cell_type": "markdown",
@@ -108,7 +108,7 @@
 					"blob_relative_path = '/data/babs/' # replace with your relative folder path \n",
 					"linked_service_name = 'ls_BABSData'"
 				],
-				"execution_count": 40
+				"execution_count": 45
 			},
 			{
 				"cell_type": "code",
@@ -145,7 +145,7 @@
 					"# json_path = wasbs_path + '201508_trip_data.csv' \n",
 					"# df_json = spark.read.json(json_path) "
 				],
-				"execution_count": 42
+				"execution_count": 46
 			},
 			{
 				"cell_type": "code",
@@ -164,7 +164,7 @@
 					"%%sql \n",
 					"create database u2udemo"
 				],
-				"execution_count": null
+				"execution_count": 47
 			},
 			{
 				"cell_type": "code",
@@ -183,6 +183,24 @@
 					"%%sql\n",
 					"select 1+1\n",
 					"show databases;"
+				],
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"print (\"hello\")"
 				],
 				"execution_count": null
 			}
