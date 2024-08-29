@@ -452,7 +452,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "915ad212-4144-4245-adac-4fda9621b53c"
+						"spark.autotune.trackingId": "ea0d320d-f59e-4730-a5e2-01c31d9d8fdf"
 					}
 				},
 				"metadata": {
@@ -507,7 +507,7 @@
 							"1+2"
 						],
 						"outputs": [],
-						"execution_count": 25
+						"execution_count": 27
 					},
 					{
 						"cell_type": "markdown",
@@ -542,11 +542,11 @@
 							"# Azure storage access info \n",
 							"blob_account_name = 'u2ubabssourcedatalli' # replace with your blob name \n",
 							"blob_container_name = 'u2ulabs' # replace with your container name \n",
-							"blob_relative_path = 'data/babs/' # replace with your relative folder path \n",
+							"blob_relative_path = '/data/babs/' # replace with your relative folder path \n",
 							"linked_service_name = 'ls_BABSData'"
 						],
 						"outputs": [],
-						"execution_count": 26
+						"execution_count": 40
 					},
 					{
 						"cell_type": "code",
@@ -576,15 +576,15 @@
 							"df_csv = spark.read.csv(csv_path, header = 'true') \n",
 							"        \n",
 							"# Read a parquet file \n",
-							"parquet_path = wasbs_path + '201508_trip_data.csv' \n",
-							"df_parquet = spark.read.parquet(parquet_path) \n",
+							"# parquet_path = wasbs_path + '201508_trip_data.csv' \n",
+							"# df_parquet = spark.read.parquet(parquet_path) \n",
 							"        \n",
 							"# Read a json file \n",
-							"json_path = wasbs_path + '201508_trip_data.csv' \n",
-							"df_json = spark.read.json(json_path) "
+							"# json_path = wasbs_path + '201508_trip_data.csv' \n",
+							"# df_json = spark.read.json(json_path) "
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 42
 					},
 					{
 						"cell_type": "code",
