@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "8488a11a-5fb9-48a7-b39a-993680b01eb5"
+				"spark.autotune.trackingId": "d6cfda61-60d9-4fc8-ab9d-4a8770391a32"
 			}
 		},
 		"metadata": {
@@ -130,7 +130,7 @@
 				"source": [
 					"df_csv.count()"
 				],
-				"execution_count": 11
+				"execution_count": 73
 			},
 			{
 				"cell_type": "code",
@@ -149,7 +149,7 @@
 				"source": [
 					"display(df_csv.head(200))"
 				],
-				"execution_count": 12
+				"execution_count": 74
 			},
 			{
 				"cell_type": "code",
@@ -171,7 +171,7 @@
 					"show databases;\n",
 					"show tables"
 				],
-				"execution_count": 17
+				"execution_count": 76
 			},
 			{
 				"cell_type": "code",
@@ -187,10 +187,10 @@
 					}
 				},
 				"source": [
-					"spark.catalog.setCurrentDatabase('u2ulabs')\n",
+					"spark.catalog.setCurrentDatabase('u2ulab')\n",
 					"df_csv.createOrReplaceTempView('tripdata')"
 				],
-				"execution_count": 15
+				"execution_count": 78
 			},
 			{
 				"cell_type": "code",
@@ -208,10 +208,10 @@
 				},
 				"source": [
 					"%%sql\n",
-					"use u2ulabs;\n",
+					"use u2ulab;\n",
 					"select * from tripdata limit 20"
 				],
-				"execution_count": 18
+				"execution_count": 80
 			},
 			{
 				"cell_type": "code",
