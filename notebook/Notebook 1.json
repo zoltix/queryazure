@@ -1,5 +1,5 @@
 {
-	"name": "qsdfqsdfqs",
+	"name": "Notebook 1",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e885d19a-47c7-48f1-9b28-66a946b51f00"
+				"spark.autotune.trackingId": "8488a11a-5fb9-48a7-b39a-993680b01eb5"
 			}
 		},
 		"metadata": {
@@ -58,32 +58,17 @@
 					}
 				},
 				"source": [
-					"# hello wold\n",
+					"# Example notebook\n",
 					"\n",
-					"$$\\sum_{i=1}^{10} i^2$$\n",
-					"\n",
-					""
+					"$$\\sum_{i=1}^{10} i^2$$"
 				]
 			},
 			{
 				"cell_type": "code",
 				"source": [
-					"1+2"
+					"1+1"
 				],
-				"execution_count": 44
-			},
-			{
-				"cell_type": "markdown",
-				"metadata": {
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					}
-				},
-				"source": [
-					"# my reeal test "
-				]
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -106,25 +91,7 @@
 					"blob_account_name = 'u2ubabssourcedatalli' # replace with your blob name \n",
 					"blob_container_name = 'u2ulabs' # replace with your container name \n",
 					"blob_relative_path = '/data/babs/' # replace with your relative folder path \n",
-					"linked_service_name = 'ls_BABSData'"
-				],
-				"execution_count": 52
-			},
-			{
-				"cell_type": "code",
-				"metadata": {
-					"jupyter": {
-						"source_hidden": false,
-						"outputs_hidden": false
-					},
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					}
-				},
-				"source": [
-					"# replace with your linked service name \n",
+					"linked_service_name = 'ls_BABSData'\n",
 					"        \n",
 					"blob_sas_token = mssparkutils.credentials.getConnectionStringOrCreds(linked_service_name) \n",
 					"        \n",
@@ -138,14 +105,14 @@
 					"df_csv = spark.read.csv(csv_path, header = 'true') \n",
 					"        \n",
 					"# Read a parquet file \n",
-					"# parquet_path = wasbs_path + '201508_trip_data.csv' \n",
-					"# df_parquet = spark.read.parquet(parquet_path) \n",
+					"#parquet_path = wasbs_path + ' Your file name ' \n",
+					"#df_parquet = spark.read.parquet(parquet_path) \n",
 					"        \n",
 					"# Read a json file \n",
-					"# json_path = wasbs_path + '201508_trip_data.csv' \n",
-					"# df_json = spark.read.json(json_path) "
+					"#json_path = wasbs_path + 'Your file name ' \n",
+					"#df_json = spark.read.json(json_path) "
 				],
-				"execution_count": 53
+				"execution_count": 72
 			},
 			{
 				"cell_type": "code",
@@ -163,7 +130,7 @@
 				"source": [
 					"df_csv.count()"
 				],
-				"execution_count": 54
+				"execution_count": 11
 			},
 			{
 				"cell_type": "code",
@@ -182,7 +149,7 @@
 				"source": [
 					"display(df_csv.head(200))"
 				],
-				"execution_count": 55
+				"execution_count": 12
 			},
 			{
 				"cell_type": "code",
@@ -195,33 +162,16 @@
 						"transient": {
 							"deleting": false
 						}
-					}
-				},
-				"source": [
-					"%%sql \n",
-					"create database u2udemo"
-				],
-				"execution_count": 47
-			},
-			{
-				"cell_type": "code",
-				"metadata": {
-					"jupyter": {
-						"source_hidden": false,
-						"outputs_hidden": false
 					},
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					}
+					"collapsed": false
 				},
 				"source": [
 					"%%sql\n",
-					"select 1+1\n",
-					"show databases;"
+					"\n",
+					"show databases;\n",
+					"show tables"
 				],
-				"execution_count": null
+				"execution_count": 17
 			},
 			{
 				"cell_type": "code",
@@ -237,9 +187,10 @@
 					}
 				},
 				"source": [
-					"print (\"hello\")"
+					"spark.catalog.setCurrentDatabase('u2ulabs')\n",
+					"df_csv.createOrReplaceTempView('tripdata')"
 				],
-				"execution_count": null
+				"execution_count": 15
 			},
 			{
 				"cell_type": "code",
@@ -252,12 +203,15 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
-					"display(df)"
+					"%%sql\n",
+					"use u2ulabs;\n",
+					"select * from tripdata limit 20"
 				],
-				"execution_count": 50
+				"execution_count": 18
 			},
 			{
 				"cell_type": "code",
@@ -270,30 +224,20 @@
 						"transient": {
 							"deleting": false
 						}
-					}
-				},
-				"source": [
-					"df"
-				],
-				"execution_count": 51
-			},
-			{
-				"cell_type": "code",
-				"metadata": {
-					"jupyter": {
-						"source_hidden": false,
-						"outputs_hidden": false
 					},
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					}
+					"collapsed": false
 				},
 				"source": [
+					"%%sql\n",
+					"\n",
+					"SELECT `Start Station`, avg(duration)\n",
+					"FROM tripdata\n",
+					"GROUP BY `Start Station`\n",
+					"ORDER BY avg(duration) DESC\n",
+					"LIMIT 20\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 19
 			}
 		]
 	}
